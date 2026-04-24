@@ -3,62 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profilim</title>
+    <title>MutinousTube | Sosyal Medya</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            margin: 0;
-        }
-        .container {
-            width: 100%;
-            max-width: 500px;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            margin-bottom: 12px;
             text-align: center;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 600;
-            box-sizing: border-box;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            background-color: #f9f9f9;
+            padding: 20px;
+            color: #333;
         }
-        .btn:active { transform: scale(0.98); }
-        
-        /* Renkler */
-        .btn-youtube { background-color: #FF0000; }
-        .btn-tiktok { background-color: #000000; }
-        .btn-rumble { background-color: #8cbf3f; }
-        .btn-dailymotion { background-color: #0066dc; }
-        .btn-telegram { background-color: #0088cc; }
-        .btn-instagram { background-color: #E1306C; }
-        .btn-x { background-color: #1DA1F2; }
-        .btn-patreon { background-color: #FF424D; }
-        .btn-facebook { background-color: #1877F2; }
+
+        .description {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: opacity 0.3s;
+            display: block;
+        }
+
+        .btn:hover { opacity: 0.8; }
+
+        /* Platform Renkleri */
+        .youtube { background-color: #FF0000; }
+        .tiktok { background-color: #000000; }
+        .rumble { background-color: #8cbf43; }
+        .dailymotion { background-color: #0066DC; }
+        .twitter { background-color: #000000; } /* X/Twitter */
+        .instagram { background-color: #E1306C; }
+        .mastodon { background-color: #6364FF; }
+        .telegram { background-color: #0088cc; }
+        .whatsapp { background-color: #25D366; }
+        .facebook { background-color: #4267B2; }
+        .patreon { background-color: #FF424D; }
+        .community { background-color: #555; }
+
+        .footer-info {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <a href="https://youtube.com/@kullanici_adin" class="btn btn-youtube">YouTube</a>
-    <a href="https://tiktok.com/@kullanici_adin" class="btn btn-tiktok">TikTok</a>
-    <a href="https://rumble.com/user/kullanici_adin" class="btn btn-rumble">Rumble</a>
-    <a href="https://dailymotion.com/kullanici_adin" class="btn btn-dailymotion">Dailymotion</a>
-    <a href="https://t.me/kullanici_adin" class="btn btn-telegram">Telegram</a>
-    <a href="https://instagram.com/kullanici_adin" class="btn btn-instagram">Instagram</a>
-    <a href="https://x.com/kullanici_adin" class="btn btn-x">X (Twitter)</a>
-    <a href="https://patreon.com/kullanici_adin" class="btn btn-patreon">Patreon</a>
-    <a href="https://facebook.com/kullanici_adin" class="btn btn-facebook">Facebook</a>
-</div>
+    <div class="description">
+        <p>Merhaba değerli Takipçim,<br>
+        Nasıl hayat tek kategoriden oluşmuyorsa kanalımda da, birçok kategoriden içerik bulabileceksiniz. Umarım kanalım senin aradığını bulduğun yer olur. Unutma;<br>
+        <strong>"Bilgi Paylaşıldıkça Kıymetli ve Değerlidir."</strong></p>
+        <p>Bağımsız yayıncılığıma destek olmak, farklı içeriklerimden haberdar olmak için sosyal medya hesaplarımı takip edebilir, WhatsApp ve Telegram gruplarıma katılabilirsiniz. Abone olursanız zengin olmam ama siz de fakirleşmezsiniz!</p>
+    </div>
+
+    <div class="button-container">
+        <a href="https://youtube.com/MutinousTube" class="btn youtube">YOUTUBE</a>
+        <a href="https://www.tiktok.com/@mutinoustube" class="btn tiktok">TIKTOK</a>
+        <a href="https://www.rumble.com/user/MutinousTube" class="btn rumble">RUMBLE</a>
+        <a href="https://www.dailymotion.com/MutinousTube" class="btn dailymotion">DAILYMOTION</a>
+        <a href="https://www.x.com/MutinousTube" class="btn twitter">X (TWITTER)</a>
+        <a href="https://www.instagram.com/MutinousTube" class="btn instagram">INSTAGRAM</a>
+        <a href="https://mastodon.social/@MutinousTube" class="btn mastodon">MASTODON</a>
+        <a href="https://t.me/MutinousTube" class="btn telegram">TELEGRAM</a>
+        <a href="https://whatsapp.com/channel/0029Vb4JKWmIyPtbv15mol0F" class="btn whatsapp">WHATSAPP</a>
+        <a href="https://www.facebook.com/MutinousTube" class="btn facebook">FACEBOOK</a>
+        <a href="https://www.patreon.com/MutinousTube" class="btn patreon">PATREON</a>
+        <a href="https://youtube.com/@MutinousTube/community" class="btn community">TOPLULUK</a>
+    </div>
+
+    <div class="footer-info">
+        <p>İletişim: <strong>MutinousTube@gmail.com</strong></p>
+    </div>
 
 </body>
 </html>
