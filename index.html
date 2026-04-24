@@ -1,81 +1,48 @@
 <!DOCTYPE html>
-
-<!--
-  To change the theme, change the class on the html tag below to one of:
-  - theme-auto: Automatically switches based on user's system preferences
-  - theme-light: Forces light theme
-  - theme-dark: Forces dark theme
--->
-
-<html class="theme-auto" lang="en"> <!-- Update`class="theme-auto" with your preference -->
-
+<html class="theme-auto" lang="tr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MutinousTube</title>
+    <link rel="icon" type="image/x-icon" href="https://mutinoustube.com/favicon.ico">
 
-    <!-- Page Title - Change this to your name/brand (50-60 characters recommended) -->
-    <title>LittleLink</title>
-    <link rel="icon" type="image/x-icon" href="/images/avatar.png"> <!-- Update this with your own favicon -->
+    <meta name="description" content="MutinousTube - Bağımsız içerik platformu">
+    <meta name="keywords" content="mutinoustube, youtube, rumble, tiktok">
 
-    <!-- Meta Description - Write a description (150-160 characters recommended) -->
-    <meta name="description" content="Replace this with your own, this appears in search results and when sharing.">
-
-    <!-- Keywords -->
-    <meta name="keywords" content="your name, industry, and specialties">
-
-    <!-- Canonical URL - Helps prevent duplicate content issues -->
-    <meta rel="canonical" href="https://yourwebsite.com">
-
-    <!-- Author Information -->
-    <meta name="author" content="Your Name">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/brands.css">
-
-    <!-- LittleLink Extended Stylesheet (Optional) -->
-    <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
-    <!-- Learn more at https://github.com/sethcottle/littlelink-extended.
-         Remove comments if you've added LittleLink Extended dependencies -->
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sethcottle/littlelink/css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sethcottle/littlelink/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sethcottle/littlelink/css/brands.css">
   </head>
 
-<body>
-
+  <body>
     <div class="container">
-        <div class="column">
+      <div class="column">
 
-            <!--
-              By default, the Avatar is rounded. Use the following:
-              - avatar--rounded: Automatically rounds the image
-              - avatar--soft: Slightly rounds the image
-              - avatar--none: Removes any rounding
+        <img class="avatar avatar--rounded" src="https://mutinoustube.com/profil.jpg" alt="MutinousTube">
 
-              Be sure to replace the src with your own image path and update the alt text
-            -->
-            <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="LittleLink">
+        <h1>MutinousTube</h1>
+        <p>Bağımsız video platformu • Gerçek haber, gerçek içerik</p>
 
-            <!-- Replace with your name or brand -->
-            <h1>
-              <div>LittleLink</div>
-            </h1>
+        <div class="button-stack">
 
-            <!-- Add a short description about yourself or your brand -->
-            <p>An open source DIY Linktree alternative.</p>
+          <a class="button button-youtube" href="https://youtube.com/MutinousTube" target="_blank">YouTube</a>
+          <a class="button button-rumble" href="https://www.rumble.com/user/MutinousTube" target="_blank">Rumble</a>
+          <a class="button button-tiktok" href="https://www.tiktok.com/@mutinoustube" target="_blank">TikTok</a>
+          <a class="button button-dailymotion" href="https://www.dailymotion.com/MutinousTube" target="_blank">Dailymotion</a>
+          <a class="button button-telegram" href="https://t.me/MutinousTube" target="_blank">Telegram</a>
+          <a class="button button-instagram" href="https://www.instagram.com/MutinousTube" target="_blank">Instagram</a>
+          <a class="button button-facebook" href="https://www.facebook.com/MutinousTube" target="_blank">Facebook</a>
+          <a class="button button-twitter" href="https://www.x.com/MutinousTube" target="_blank">X (Twitter)</a>
+          <a class="button button-mastodon" href="https://mastodon.social/@MutinousTube" target="_blank">Mastodon</a>
+          
+          <!-- WhatsApp kanal linki -->
+          <a class="button button-whatsapp" href="https://whatsapp.com/channel/0029Vb4JKWmIyPtbv15mol0F" target="_blank">WhatsApp Kanal</a>
 
-            <!-- All your buttons go here -->
-            <div class="button-stack" role="navigation">
-
-              <!-- Default LittleLink -->
-              <a class="button button-default" href="#" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/littlelink.svg" alt="LittleLink Logo">LittleLink</a>
-
-              <!-- Amazon -->
-              <a class="button button-amazon" href="#" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/amazon.svg" alt="Amazon Wishlist Logo">Amazon Wishlist</a>
-
-              <!-- Amazon Music -->
-              <a class="button button-amazon-music" href="#" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/amazon-music.svg" alt="Amazon Music Logo">Listen on Amazon Music</a>
-
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
               <!-- Apple App Store -->
               <a class="button button-appstore" href="#" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/apple.svg" alt="Apple Logo">Apple App Store</a>
 
