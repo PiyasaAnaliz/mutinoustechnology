@@ -3,66 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutina's Tube</title>
+    <title>Mutinous Technology</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
+            background-color: #f0f2f5;
             margin: 0;
-            padding: 10px;
-            background-color: #f4f4f4;
+            padding: 20px 10px;
         }
-        .profile-section {
-            margin-bottom: 10px;
+        .header {
+            margin-bottom: 20px;
         }
         .profile-img {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 2px solid #ccc;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
         .description {
-            font-size: 13px;
-            color: #666;
-            margin: 5px auto 15px auto;
-            max-width: 300px;
-            line-height: 1.4;
+            font-size: 16px;
+            color: #333;
+            max-width: 400px;
+            margin: 0 auto 25px auto;
+            font-weight: 500;
         }
         .btn {
             display: block;
             width: 90%;
-            margin: 8px auto;
-            padding: 14px 0;
+            max-width: 400px;
+            margin: 12px auto;
+            padding: 18px 0;
             text-decoration: none;
             color: white;
-            background-color: #333;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 16px;
+            transition: transform 0.2s;
         }
-        .btn:hover { background-color: #555; }
+        .btn:hover { transform: scale(1.02); opacity: 0.9; }
+        
+        /* Renkler */
+        .yt { background-color: #FF0000; }
+        .tt { background-color: #000000; }
+        .rumble { background-color: #87C232; }
+        .dm { background-color: #0066DC; }
+        .tg { background-color: #0088cc; }
+        .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .tw { background-color: #1DA1F2; }
+        .ms { background-color: #6364FF; }
+        .wa { background-color: #25D366; }
+        .pt { background-color: #FF424D; }
+        .fb { background-color: #4267B2; }
+        .com { background-color: #555; }
+        .mail { background-color: #D44638; }
     </style>
 </head>
 <body>
 
-    <div class="profile-section">
-        <img src="profil_fotografin_linki.jpg" alt="Logo" class="profile-img">
-        <p class="description">Mutina's Tube - Bağımsız yayıncılık ve topluluk platformu. Tüm güncel içeriklerime buradan ulaşabilirsiniz.</p>
+    <div class="header">
+        <img src="https://via.placeholder.com/150" alt="Mutinous Technology Logo" class="profile-img">
+        <h3>Mutinous Technology</h3>
+        <p class="description">Bağımsız Yayıncılığıma Hoşgeldiniz Tüm Güncel İçeriklerime Buradan Ulaşabilirsiniz.</p>
     </div>
 
-    <a href="#" class="btn">YouTube</a>
-    <a href="#" class="btn">TikTok</a>
-    <a href="#" class="btn">Rumble</a>
-    <a href="#" class="btn">Dailymotion</a>
-    <a href="#" class="btn">Telegram</a>
-    <a href="#" class="btn">Instagram</a>
-    <a href="#" class="btn">X</a>
-    <a href="#" class="btn">Mastodon</a>
-    <a href="#" class="btn">WhatsApp</a>
-    <a href="#" class="btn">Patreon</a>
-    <a href="#" class="btn">Facebook</a>
-    <a href="#" class="btn">Topluluk</a>
-    <a href="#" class="btn">İletişim (E-posta)</a>
+    <a href="https://youtube.com/MutinousTube" class="btn yt">YouTube</a>
+    <a href="https://www.tiktok.com/@mutinoustube" class="btn tt">TikTok</a>
+    <a href="https://www.rumble.com/user/MutinousTube" class="btn rumble">Rumble</a>
+    <a href="https://www.dailymotion.com/MutinousTube" class="btn dm">Dailymotion</a>
+    <a href="https://t.me/MutinousTube" class="btn tg">Telegram</a>
+    <a href="https://www.instagram.com/MutinousTube" class="btn ig">Instagram</a>
+    <a href="https://www.x.com/MutinousTube" class="btn tw">Twitter (X)</a>
+    <a href="https://mastodon.social/@MutinousTube" class="btn ms">Mastodon</a>
+    <a href="https://whatsapp.com/channel/0029Vb4JKWmIyPtbv15mol0F" class="btn wa">WhatsApp</a>
+    <a href="https://www.patreon.com/MutinousTube" class="btn pt">Patreon</a>
+    <a href="https://www.facebook.com/MutinousTube" class="btn fb">Facebook</a>
+    <a href="https://youtube.com/@MutinousTube/community" class="btn com">Topluluk</a>
+    <a href="mailto:MutinousTube@gmail.com" class="btn mail">İletişim</a>
 
 </body>
 </html>
