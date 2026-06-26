@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,6 @@
             display: block;
             margin: 0 auto;
         }
-        /* Başlık ve açıklama boşluklarını daralttık */
         h3 {
             margin: 5px 0 0 0;
             color: #333;
@@ -121,60 +120,33 @@
     <a href="https://youtube.com/@MutinousTube/community" class="btn com">Topluluk</a>
     <a href="mailto:MutinousTube@gmail.com" class="btn mail">İletişim</a>
 
-    <!-- YouTube API Oynatıcı Yuvası -->
     <div class="video-container">
-        <div id="player"></div>
+        <iframe 
+            id="mutinous-player"
+            src="https://www.youtube.com/embed/videoseries?list=PLs8e_3KWChB_qb5k_r-lYlg31Xyl5AKhu&autoplay=1&mute=1&playsinline=1" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
     </div>
 
-    <!-- YouTube Gelişmiş IFrame API Altyapısı -->
     <script>
-        // YouTube API scriptini yükle
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '100%',
-                width: '100%',
-                playerVars: {
-                    'listType': 'playlist',
-                    'list': 'PLs8e_3KWChB_qb5k_r-lYlg31Xyl5AKhu',
-                    'autoplay': 1,
-                    'mute': 1, // Tarayıcı engeline takılmamak için sessiz başlar
-                    'playsinline': 1,
-                    'rel': 0
-                },
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
+        // Sayfa yüklenip kullanıcı ekranda bir yere dokunduğu an sesi açar
+        function acSesi() {
+            var iframe = document.getElementById('mutinous-player');
+            if (iframe) {
+                // Videonun oynamasını kesmeden sadece mute parametresini kaldırıp sesi devreye sokar
+                iframe.src = "https://www.youtube.com/embed/videoseries?list=PLs8e_3KWChB_qb5k_r-lYlg31Xyl5AKhu&autoplay=1&playsinline=1";
+            }
+            // Tek sefer çalışması için dinleyicileri kaldırır
+            window.removeEventListener('click', acSesi);
+            window.removeEventListener('touchstart', acSesi);
+            window.removeEventListener('scroll', acSesi);
         }
 
-        function onPlayerReady(event) {
-            // Listeyi sayfa açılır açılmaz oynatır
-            event.target.playVideo();
-            
-            // Kullanıcı sayfada ilk hareketini yaptığı an sesi otomatik açar
-            var unlockSound = function() {
-                if (player && typeof player.unMute === 'function') {
-                    player.unMute();
-                    player.setVolume(100); // Ses seviyesini %100 yapar
-                    player.playVideo();   
-                }
-                // Tetiklendikten sonra dinleyicileri kaldırır
-                window.removeEventListener('click', unlockSound);
-                window.removeEventListener('touchstart', unlockSound);
-                window.removeEventListener('scroll', unlockSound);
-            };
-
-            // Etkileşim dinleyicileri
-            window.addEventListener('click', unlockSound);
-            window.addEventListener('touchstart', unlockSound);
-            window.addEventListener('scroll', unlockSound);
-        }
+        window.addEventListener('click', acSesi);
+        window.addEventListener('touchstart', acSesi);
+        window.addEventListener('scroll', acSesi);
     </script>
 
 </body>
