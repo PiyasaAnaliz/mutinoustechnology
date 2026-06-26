@@ -26,7 +26,6 @@
             display: block;
             margin: 0 auto;
         }
-        /* Başlık ve açıklama boşluklarını daralttık */
         h3 {
             margin: 5px 0 0 0;
             color: #333;
@@ -88,7 +87,8 @@
             height: 100%;
             border: 0;
         }
-        /* Telegram Yerleşimi İçin Özel Alan (Telegram iframe yapısı 16:9 oranına tam sığmayabilir) */
+        
+        /* Telegram Resmi Yerleşim Alanı */
         .telegram-container {
             width: 94%;
             max-width: 400px;
@@ -97,12 +97,8 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             background: #fff;
-        }
-        .telegram-container iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-            display: block;
+            display: inline-block;
+            text-align: left;
         }
     </style>
 </head>
@@ -137,21 +133,21 @@
     <a href="https://youtube.com/@MutinousTube/community" class="btn com">Topluluk</a>
     <a href="mailto:MutinousTube@gmail.com" class="btn mail">İletişim</a>
 
-    <!-- YouTube API Oynatıcı Yuvası (Sadece Bu Otomatik Oynar) -->
+    <!-- YouTube API Oynatıcı Yuvası (Yalnızca bu otomatik oynar) -->
     <div class="video-container">
         <div id="player"></div>
     </div>
 
-    <!-- Dailymotion Oynatma Listesi Yuvası (Manuel Oynatılan) -->
+    <!-- Dailymotion Oynatma Listesi (Otomatik oynatma tamamen kapatıldı) -->
     <div class="video-container">
         <iframe 
-            src="https://www.dailymotion.com/embed/playlist/xbx1yy" 
+            src="https://www.dailymotion.com/embed/playlist/xbx1yy?autoplay=0&mute=0&queue-autoplay-next=0" 
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
     </div>
 
-    <!-- Rumble Oynatma Listesi Yuvası (Manuel Oynatılan) -->
+    <!-- Rumble Oynatma Listesi (Manuel Oynatılan) -->
     <div class="video-container">
         <iframe 
             src="https://rumble.com/embed/playlists/BB8jJYZZJ3U" 
@@ -160,17 +156,13 @@
         </iframe>
     </div>
 
-    <!-- Telegram Gönderi/Video Yuvası (Manuel Oynatılan) -->
+    <!-- Telegram Resmi Güvenli Oynatma/Gösterim Ekranı -->
     <div class="telegram-container">
-        <iframe 
-            src="https://t.me/MutinousTube/111?embed=1" 
-            allowfullscreen>
-        </iframe>
+        <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="MutinousTube/111" data-width="100%"></script>
     </div>
 
     <!-- YouTube Gelişmiş IFrame API Altyapısı -->
     <script>
-        // YouTube API scriptini yükle
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -185,7 +177,7 @@
                     'listType': 'playlist',
                     'list': 'PLs8e_3KWChB_qb5k_r-lYlg31Xyl5AKhu',
                     'autoplay': 1,
-                    'mute': 1, // Tarayıcı engeline takılmamak için sessiz başlar
+                    'mute': 1, 
                     'playsinline': 1,
                     'rel': 0
                 },
@@ -196,23 +188,19 @@
         }
 
         function onPlayerReady(event) {
-            // Listeyi sayfa açılır açılmaz oynatır
             event.target.playVideo();
             
-            // Kullanıcı sayfada ilk hareketini yaptığı an sesi otomatik açar
             var unlockSound = function() {
                 if (player && typeof player.unMute === 'function') {
                     player.unMute();
-                    player.setVolume(100); // Ses seviyesini %100 yapar
+                    player.setVolume(100); 
                     player.playVideo();   
                 }
-                // Tetiklendikten sonra dinleyicileri kaldırır
                 window.removeEventListener('click', unlockSound);
                 window.removeEventListener('touchstart', unlockSound);
                 window.removeEventListener('scroll', unlockSound);
             };
 
-            // Etkileşim dinleyicileri
             window.addEventListener('click', unlockSound);
             window.addEventListener('touchstart', unlockSound);
             window.addEventListener('scroll', unlockSound);
