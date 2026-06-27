@@ -191,7 +191,8 @@
                 </iframe>
             </div>
 
-            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe src="https://geo.dailymotion.com/player.html?video=xaa2a66"style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"allowfullscreentitle="Dailymotion Video Player"allow="web-share"></iframe></div>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe src="https://geo.dailymotion.com/player.html?video=xaa2a66"style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"allowfullscreentitle="Dailymotion Video Player"allow="web-share"></iframe></div>
             </div>
 
             <!-- Rumble Oynatıcı Alanı (Kullanıcı tıklamadan oynamaz) -->
@@ -211,6 +212,26 @@
     <script>
         !function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u4p7gvi"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");
         Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});
+    </script>
+
+    <!-- AKILLI OTOMATİK ENGELEME VE GÜVENLİK SCRIPTİ -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Dailymotion'ın otomatik oynamasını engellemek için iframe'i JavaScript ile baştan üretiyoruz.
+            // allow="autoplay" yetkisini tamamen siliyoruz ve tarayıcıya video oynatma hakkı tanımıyoruz.
+            var dmWrapper = document.getElementById("dm-wrapper");
+            if (dmWrapper) {
+                var dmIframe = document.createElement("iframe");
+                dmIframe.id = "dm-player";
+                // autoplay=0 ve mute=1 parametreleri ile Dailymotion oynatıcısını tamamen donduruyoruz.
+                dmIframe.src = "https://www.dailymotion.com/embed/playlist/xbx1yy?autoplay=0&mute=1&ui-start-screen-info=0&queue-autoplay-next=0";
+                dmIframe.setAttribute("allowfullscreen", "true");
+                // ÖNEMLİ: 'autoplay' izni kesinlikle eklenmemiştir. Kullanıcı tıklamadan oynaması imkansızdır.
+                dmIframe.setAttribute("allow", "clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                
+                dmWrapper.appendChild(dmIframe);
+            }
+        });
     </script>
 
 </body>
