@@ -214,18 +214,15 @@
         Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});
     </script>
 
-    <!-- Akıllı Güvenlik ve Dailymotion Engelleme Scripti -->
+   
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var dmWrapper = document.getElementById("dm-wrapper");
             if (dmWrapper) {
                 var dmIframe = document.createElement("iframe");
                 dmIframe.id = "dm-player";
-                // Dailymotion oynatıcısının tüm çerez izinlerini ezmek için parametreler kilitlendi
-                dmIframe.src = "https://dailymotion.com/playlist/xcmfcy";
+                .src = "https://dailymotion.com/playlist/xcmfcy";
                 dmIframe.setAttribute("allowfullscreen", "true");
-                // KRİTİK AYAR: 'autoplay' izni kesinlikle buraya yazılmadı. Tarayıcı videoyu zorla durduracaktır.
-                dmIframe.setAttribute("allow", "clipboard-write; encrypted-media; gyroscope; picture-in-picture");
                 
                 dmWrapper.appendChild(dmIframe);
             }
