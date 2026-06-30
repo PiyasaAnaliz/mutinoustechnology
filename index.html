@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutinous Technology - ON & Enpara Dünyası</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title>Mutinous Technology - Kampanyalar Dünyası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         :root {
@@ -12,6 +12,11 @@
             --on-dark: #1e2229;  
             --bg-light: #f0f2f5;
             --white: #ffffff;
+            
+            /* Vodafone Değişkenleri - Çakışmayı önlemek için izole edildi */
+            --voda-red: #e60000;
+            --voda-dark: #231f20;
+            --voda-bg-light: #f4f4f9;
         }
 
         /* Genel Temizlik ve Sayfa Ayarları */
@@ -256,7 +261,7 @@
         }
 
         .code-container:hover {
-            background: #f0df4;
+            background: #f0fdf4;
             transform: scale(1.02);
         }
 
@@ -469,6 +474,157 @@
             border: none;
         }
 
+        /* VODAFONE ÖZEL İZOLE EDİLMİŞ STİLLER (Çakışma Engellendi) */
+        .voda-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .voda-header {
+            background: linear-gradient(135deg, var(--voda-red), #b30000);
+            color: var(--white);
+            padding: 40px 20px;
+            border-radius: 24px;
+            box-shadow: 0 10px 20px rgba(230, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+
+        .voda-header h1 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .voda-header p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .voda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .voda-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eef0f2;
+            text-align: center;
+        }
+
+        .voda-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(230, 0, 0, 0.12);
+        }
+
+        .voda-card-header {
+            background-color: var(--voda-dark);
+            color: var(--white);
+            padding: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .voda-card.voda-fiber .voda-card-header {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+
+        .voda-card-body {
+            padding: 25px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .voda-card-body p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .voda-code-box {
+            background: #f8f9fa;
+            border: 2px dashed #ccc;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            color: var(--voda-red);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .voda-code-box:hover {
+            background: #fff5f5;
+            border-color: var(--voda-red);
+        }
+
+        .voda-code-box::after {
+            content: 'Kodu Kopyala';
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: #6c757d;
+            font-weight: 400;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .voda-code-box:hover::after { opacity: 1; }
+
+        .voda-btn {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            background-color: var(--voda-red);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s;
+            box-shadow: 0 4px 6px rgba(230, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .voda-btn:hover { background-color: #b30000; }
+
+        .voda-card.voda-fiber .voda-btn {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            box-shadow: 0 4px 6px rgba(0, 114, 255, 0.2);
+        }
+        .voda-card.voda-fiber .voda-btn:hover { filter: brightness(0.9); }
+
+        /* Bildirim Global Alanı */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -485,7 +641,7 @@
             border: 1px solid var(--on-green);
         }
 
-        /* MOBİL RESPONSIVE AYARI */
+        /* MOBİL RESPONSIVE AYARLARI */
         @media (max-width: 868px) {
             .campaign-wrapper {
                 flex-direction: column; 
@@ -496,11 +652,15 @@
                 width: 100%;
                 max-width: 550px; 
             }
+            .voda-wrapper {
+                padding: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- ÜST LOGO VE TANITIM ALANI -->
     <div class="header">
         <a href="https://www.youtube.com/@mutinoustube" target="_blank" rel="noopener noreferrer">
             <img src="https://yt3.googleusercontent.com/x0mGWLt60-GJv2ZvwAcvOmkTftz_zogGGIB01a3mqXIZGpvSxL_k_n1eb4kmZWBLIWa6I0atcA=s160-c-k-c0x00ffffff-no-rj" alt="Mutinous Technology Logo" class="profile-img">
@@ -513,8 +673,10 @@
         <p class="description">Bağımsız Yayıncılığıma Hoşgeldiniz Tüm Güncel İçeriklerime Buradan Ulaşabilirsiniz.</p>
     </div>
 
+    <!-- ANA DÜZEN (BUTONLAR VE SOSYAL MEDYA VİDEOLARI) -->
     <div class="main-layout">
         
+        <!-- BUTON GRUPLARI (SOL SÜTUN) -->
         <div class="links-container">
             <a href="https://youtube.com/MutinousTube" target="_blank" rel="noopener noreferrer" class="btn yt">YouTube</a>
             <a href="https://www.youtube.com/channel/UCNQpjQqIsdUkKjsulWjngJA/join" target="_blank" rel="noopener noreferrer" class="btn dm">Özel Katıl Üyeliği</a>
@@ -535,11 +697,13 @@
             <a href="https://youtube.com/@MutinousTube/community" target="_blank" rel="noopener noreferrer" class="btn com">Topluluk</a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mutinoustube@gmail.com" target="_blank" rel="noopener noreferrer" class="btn mail">İletişim</a>
             
+            <!-- RUMBLE OYNATICI ALANI -->
             <div class="video-container" style="margin-top: 12px;">
                 <div id="rumble_v76n2f8"></div>
             </div>
         </div>
 
+        <!-- MEDYALAR VE VİDEOLAR (SAĞ SÜTUN) -->
         <div class="media-container">
             <div class="video-container">
                 <iframe 
@@ -564,8 +728,10 @@
         </div>
     </div>
 
+    <!-- BANKA KAMPANYALARI BÖLÜMÜ (ORTA ALAN) -->
     <div class="campaign-wrapper">
 
+        <!-- ON KART -->
         <div class="container">
             <div class="banner">
                 <div class="logo-text">ON</div>
@@ -612,6 +778,7 @@
             </div>
         </div>
 
+        <!-- ENPARA KART -->
         <div class="campaign-container">
             <div class="brand-header">
                 <h1 class="main-title">Size Özel Enpara Kampanya Linkleri İle Avantajlar Dünyasına Katılabilirsiniz</h1>
@@ -649,7 +816,78 @@
         </div>
     </div>
 
-    <div id="toast" class="toast">Davet kodu panoya kopyalandı!</div>
+    <!-- VODAFONE ÖZEL KAMPANYALAR BÖLÜMÜ (EN ALT ALAN) -->
+    <div class="voda-wrapper">
+        <div class="voda-header">
+            <h1><i class="fa-solid fa-gift"></i> Vodafone Avantaj Günleri!</h1>
+            <p>Merhaba arkadaşlar! Vodafone'un uygun fiyatlı faturalı hat ve fiber internet kampanyalarından, size özel hazırladığım indirim kodları ve linklerle hemen faydalanabilirsiniz. Kaçırmayın, değerlendirin!</p>
+        </div>
+
+        <div class="voda-grid">
+            <!-- Kart 1 -->
+            <div class="voda-card">
+                <div class="voda-card-header"><i class="fa-solid fa-star"></i> Tercih Kampanyası</div>
+                <div class="voda-card-body">
+                    <p>Size Özel Avantajlı Tarife</p>
+                    <div class="voda-code-box" onclick="copyCode('TERCIH47CVR3I6T')">TERCIH47CVR3I6T</div>
+                    <a href="https://www.vodafone.com.tr/numara-tasima-yeni-hat/tarifeler/MNP/postpaid/ALL?referer=amb-f0f7349c-f40e-4649-8053-aad230d2419b&couponCode=TERCIH47CVR3I6T&cid=perf-ambaff" target="_blank" class="voda-btn">Başvuru Yap</a>
+                </div>
+            </div>
+
+            <!-- Kart 2 -->
+            <div class="voda-card">
+                <div class="voda-card-header"><i class="fa-solid fa-crown"></i> Vodafone RED</div>
+                <div class="voda-card-body">
+                    <p>Dolu Dolu RED Dünyası Fırsatı</p>
+                    <div class="voda-code-box" onclick="copyCode('RED3LKRZZE7')">RED3LKRZZE7</div>
+                    <a href="https://www.vodafone.com.tr/numara-tasima-yeni-hat/tarifeler/MNP/postpaid/RED?referer=amb-f0f7349c-f40e-4649-8053-aad230d2419b&couponCode=RED3LKRZZE7&cid=perf-ambaff" target="_blank" class="voda-btn">Başvuru Yap</a>
+                </div>
+            </div>
+
+            <!-- Kart 3 -->
+            <div class="voda-card">
+                <div class="voda-card-header"><i class="fa-solid fa-fire"></i> Yalın Fırsat</div>
+                <div class="voda-card-body">
+                    <p>En Uygun Fiyatlı Yalın Paketler</p>
+                    <div class="voda-code-box" onclick="copyCode('FIRSAT6IZQGZC5')">FIRSAT6IZQGZC5</div>
+                    <a href="https://www.vodafone.com.tr/numara-tasima-yeni-hat/tarifeler/MNP/postpaid/YALIN?referer=amb-f0f7349c-f40e-4649-8053-aad230d2419b&couponCode=FIRSAT6IZQGZC5&cid=perf-ambaff" target="_blank" class="voda-btn">Başvuru Yap</a>
+                </div>
+            </div>
+
+            <!-- Kart 4 -->
+            <div class="voda-card">
+                <div class="voda-card-header"><i class="fa-solid fa-bolt"></i> FreeZone Kampanyası</div>
+                <div class="voda-card-body">
+                    <p>Gençlere Özel Ekstra Hediyeli</p>
+                    <div class="voda-code-box" onclick="copyCode('GENC2A5E7V2V')">GENC2A5E7V2V</div>
+                    <a href="https://www.vodafone.com.tr/numara-tasima-yeni-hat/tarifeler/MNP/postpaid/FREEZONE?referer=amb-f0f7349c-f40e-4649-8053-aad230d2419b&couponCode=GENC2A5E7V2V&cid=perf-ambaff" target="_blank" class="voda-btn">Başvuru Yap</a>
+                </div>
+            </div>
+
+            <!-- Kart 5 -->
+            <div class="voda-card">
+                <div class="voda-card-header"><i class="fa-solid fa-heart"></i> İlk Fırsat Paketleri</div>
+                <div class="voda-card-body">
+                    <p>Vodafone'a İlk Gelenlere Özel</p>
+                    <div class="voda-code-box" onclick="copyCode('ILK5XHX0IPB')">ILK5XHX0IPB</div>
+                    <a href="https://www.vodafone.com.tr/numara-tasima-yeni-hat/tarifeler/MNP/postpaid/POME?referer=amb-f0f7349c-f40e-4649-8053-aad230d2419b&couponCode=ILK5XHX0IPB&cid=perf-ambaff" target="_blank" class="voda-btn">Başvuru Yap</a>
+                </div>
+            </div>
+
+            <!-- Kart 6 (Fiber İnternet) -->
+            <div class="voda-card vada-fiber">
+                <div class="voda-card-header"><i class="fa-solid fa-house-signal"></i> Fiber İnternet</div>
+                <div class="voda-card-body">
+                    <p>Evde Işık Hızında Fiber İnternet</p>
+                    <div class="voda-code-box" style="color: #0072ff;" onclick="copyCode('FIBER41LT4MA2')">FIBER41LT4MA2</div>
+                    <a href="https://www.vodafone.com.tr/evde-internet/home?referer=amb-f0f7349c-f40e-4649-8053-aad230d2419b&couponCode=FIBER41LT4MA2&cid=perf-ambaff" target="_blank" class="voda-btn">Başvuru Yap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST BİLDİRİM ALANI -->
+    <div id="toast" class="toast">Kod panoya kopyalandı!</div>
 
     <script>
         function copyCode(text) {
@@ -663,11 +901,13 @@
         }
     </script>
 
+    <!-- Rumble Script -->
     <script>
         !function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u4p7gvi"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");
         Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});
     </script>
 
+    <!-- Dailymotion Scripti -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var dmWrapper = document.getElementById("dm-wrapper");
