@@ -131,6 +131,26 @@
             height: 100%;
             border: 0;
         }
+
+        /* RUMBLE İÇİN ÖZEL UZATILMIŞ ALAN (Alt Çizgiyi Sıfırlamak ve Taşmayı Önlemek İçin %64 Yapıldı) */
+        .rumble-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: relative;
+            padding-bottom: 64%; /* Yukarıdan aşağıya esnetilerek alt taban eşitlendi */
+            height: 0;
+            background: #000;
+        }
+        .rumble-container div, .rumble-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+        }
         
         /* Telegram Bölümü */
         .telegram-container {
@@ -146,14 +166,6 @@
 <body>
 
     <!-- Logo ve Başlık Alanı -->
-
-    <script>!function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u4"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");</script>
-
-<div id="rumble_v76n2f8"></div>
-<script>
-Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});</script>
-
-    
     <div class="header">
         <a href="https://www.youtube.com/@mutinoustube">
             <img src="https://yt3.googleusercontent.com/x0mGWLt60-GJv2ZvwAcvOmkTftz_zogGGIB01a3mqXIZGpvSxL_k_n1eb4kmZWBLIWa6I0atcA=s160-c-k-c0x00ffffff-no-rj" alt="Mutinous Technology Logo" class="profile-img">
@@ -188,16 +200,16 @@ Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});</script>
             <a href="https://youtube.com/@MutinousTube/community" class="btn com">Topluluk</a>
             <a href="mailto:MutinousTube@gmail.com" class="btn mail">İletişim</a>
             
-            <!-- YENİ EKLENEN YOUTUBE VİDEO LİSTESİ (LİNKLERİN ALTINA EŞİTLENDİ) -->
+            <!-- (YENİ YER) RUMBLE OYNATICI ALANI BURAYA GELDİ -->
             <div class="video-container" style="margin-top: 12px;">
-                <iframe src="https://www.youtube.com/embed/videoseries?si=OrSUw39lUv6rKT8J&amp;list=PLs8e_3KWChB90M7uwcDHVa7eEmVQV04wS" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div id="rumble_v76n2f8"></div>
             </div>
         </div>
 
         <!-- VİDEOLAR VE MEDYA MEDYALARI (SAĞ SÜTUN) -->
         <div class="media-container">
             
-            <!-- YouTube Oynatma Listesi -->
+            <!-- (YENİ YER) YOUTUBE OYNATMA LİSTESİ BURAYA GELDİ -->
             <div class="video-container">
                 <iframe 
                     id="yt-player"
@@ -217,18 +229,25 @@ Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});</script>
                 <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="MutinousTube/111" data-width="100%"></script>
             </div>
             
-         <script>!function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u4"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");</script>
+            <!-- (YENİ YER) SOLDAKİ LİSTEYLE ALT TABANI EŞİTLENMİŞ YOUTUBE VİDEO LİSTESİ -->
+            <div class="rumble-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?si=OrSUw39lUv6rKT8J&amp;list=PLs8e_3KWChB90M7uwcDHVa7eEmVQV04wS" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
 
-<div id="rumble_v76n2f8"></div>
-<script>
-Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});</script>
+        </div>
+    </div>
+
+    <!-- Rumble Script -->
+    <script>
+        !function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u4p7gvi"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");
+        Rumble("play", {"video":"v76n2f8","div":"rumble_v76n2f8"});
+    </script>
 
     <!-- AKILLI OTOMATİK ENGELEME VE GÜVENLİK SCRIPTİ -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var dmWrapper = document.getElementById("dm-wrapper");
             if (dmWrapper) {
-                // Temizleme işlemi ve kontrollü iframe yüklemesi
                 dmWrapper.innerHTML = ""; 
                 var dmIframe = document.createElement("iframe");
                 dmIframe.id = "dm-player";
