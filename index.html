@@ -112,7 +112,7 @@
         .com { background-color: #555; }
         .mail { background-color: #D44638; }
 
-        /* Video Kapsayıcı Alanları (16:9 Sinematik Oran) */
+        /* Standart Video Kapsayıcı Alanı */
         .video-container {
             width: 100%;
             border-radius: 12px;
@@ -132,23 +132,43 @@
             border: 0;
         }
 
-        /* RUMBLE İÇİN ÖZEL UZATILMIŞ ALAN (Alt Çizgiyi Sıfırlamak ve Taşmayı Önlemek İçin %64 Yapıldı) */
-        .rumble-container {
+        /* SOLDAKİ RUMBLE OYNATICISI (Aşağıya doğru esnetildi) */
+        .rumble-stretched {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             position: relative;
-            padding-bottom: 64%; /* Yukarıdan aşağıya esnetilerek alt taban eşitlendi */
+            padding-bottom: 64%; /* Yükseklik yukarıdan aşağıya uzatıldı */
             height: 0;
             background: #000;
         }
-        .rumble-container div, .rumble-container iframe {
+        .rumble-stretched div, .rumble-stretched iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100% !important;
             height: 100% !important;
+            border: 0;
+        }
+
+        /* SAĞ ALTAKİ YOUTUBE LİSTESİ (Taşmayı önlemek için milimetrik olarak daraltıldı) */
+        .youtube-compact {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: relative;
+            padding-bottom: 52.5%; /* Yükseklik daraltılarak sol tarafla eşitlendi */
+            height: 0;
+            background: #000;
+        }
+        .youtube-compact iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: 0;
         }
         
@@ -200,8 +220,8 @@
             <a href="https://youtube.com/@MutinousTube/community" class="btn com">Topluluk</a>
             <a href="mailto:MutinousTube@gmail.com" class="btn mail">İletişim</a>
             
-            <!-- (YENİ YER) RUMBLE OYNATICI ALANI BURAYA GELDİ -->
-            <div class="video-container" style="margin-top: 12px;">
+            <!-- UZATILMIŞ RUMBLE ALANI -->
+            <div class="rumble-stretched" style="margin-top: 12px;">
                 <div id="rumble_v76n2f8"></div>
             </div>
         </div>
@@ -209,7 +229,7 @@
         <!-- VİDEOLAR VE MEDYA MEDYALARI (SAĞ SÜTUN) -->
         <div class="media-container">
             
-            <!-- (YENİ YER) YOUTUBE OYNATMA LİSTESİ BURAYA GELDİ -->
+            <!-- Üst YouTube Oynatma Listesi -->
             <div class="video-container">
                 <iframe 
                     id="yt-player"
@@ -229,8 +249,8 @@
                 <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="MutinousTube/111" data-width="100%"></script>
             </div>
             
-            <!-- (YENİ YER) SOLDAKİ LİSTEYLE ALT TABANI EŞİTLENMİŞ YOUTUBE VİDEO LİSTESİ -->
-            <div class="rumble-container">
+            <!-- DARALTILMIŞ YOUTUBE VİDEO LİSTESİ (Rumble ile Alt Çizgisi Tam Eşitlendi) -->
+            <div class="youtube-compact">
                 <iframe src="https://www.youtube.com/embed/videoseries?si=OrSUw39lUv6rKT8J&amp;list=PLs8e_3KWChB90M7uwcDHVa7eEmVQV04wS" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
