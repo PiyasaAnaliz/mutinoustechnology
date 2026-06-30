@@ -72,11 +72,11 @@
         /* Bilgisayar (Masaüstü) Ekranlar için Yan Yana Görünüm Düzeni */
         @media (min-width: 768px) {
             .main-layout {
-                grid-template-columns: 1fr 1fr; /* Sütunlar tam eşit %50 - %50 genişliğe çekildi */
-                align-items: start;
+                grid-template-columns: 1fr 1fr; /* Tam eşit sütun dağılımı */
+                align-items: stretch; /* Boyutları dikeyde eşitlemek için stretch yapıldı */
             }
             .links-container, .media-container {
-                max-width: 100%; /* Masaüstünde kısıtlamalar kaldırılarak videolar eşitlendi */
+                max-width: 100%;
             }
         }
 
@@ -112,7 +112,7 @@
         .com { background-color: #555; }
         .mail { background-color: #D44638; }
 
-        /* Video Kapsayıcı Alanları (16:9 Sinematik Oran ve Taşma Engeli) */
+        /* Standart Video Kapsayıcı Alanları */
         .video-container {
             width: 100%;
             border-radius: 12px;
@@ -123,7 +123,27 @@
             height: 0;
             background: #000;
         }
-        .video-container iframe, .video-container div, .video-container object {
+        .video-container iframe, .video-container div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Rumble İçin Özel Aşağı Uzatılmış Kapsayıcı (YouTube Listesi ile Eşitlendi) */
+        .rumble-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: relative;
+            padding-bottom: 59.5%; /* Yükseklik tam YouTube listesi hizasına göre aşağı uzatıldı */
+            height: 0;
+            background: #000;
+        }
+        .rumble-container div, .rumble-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -201,7 +221,7 @@
                 <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="MutinousTube/111" data-width="100%"></script>
             </div>
             
-            <div class="video-container">
+            <div class="rumble-container">
                 <div id="rumble_v76n2f8"></div>
             </div>
 
